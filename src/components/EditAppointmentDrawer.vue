@@ -56,13 +56,13 @@ import useAppointments from "@/composables/useAppointments";
 
 const props = defineProps<{
   isOpen: boolean;
-  appointment: Partial<AppointmentFields>;
+  appointment: Partial<any>;
 }>();
 const emit = defineEmits(["update:isOpen", "refreshAppointments"]);
 
 const { updateAppointment } = useAppointments();
 
-const editData = ref<Partial<AppointmentFields>>({});
+const editData = ref<Partial<any>>({});
 
 watch(
   () => props.appointment,
